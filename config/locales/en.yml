@@ -30,4 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        name: "Nama"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "tidak boleh kosong"

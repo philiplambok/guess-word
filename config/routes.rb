@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'web/users#new'
+
+  scope module: :web do
+    resources :users do
+      member do
+        resources :playground, only: %i[index],
+                               module: :users,
+                               as: :user_playground
+      end
+    end
+  end
 end

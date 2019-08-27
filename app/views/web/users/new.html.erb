@@ -1,0 +1,12 @@
+<h4>Welcome to guess-word game</h4>
+
+<%= render 'shared/messages' %>
+
+<%= form_with(model: @user, url: users_path, method: :post, local: true) do |form| %>
+  <p>
+    <%= form.text_field :name, placeholder: 'Masukan nama kamu' %>
+  </p>
+  <p>
+    <%= form.submit "Mulai Bermain" %>
+  </p>
+<% end %>
