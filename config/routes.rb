@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'web/users#new'
+  root 'web/welcome#index'
 
   scope module: :web do
-    resources :users do
+    resources :users, only: %i[create] do
       member do
         resources :playground, only: %i[index],
                                module: :users,
