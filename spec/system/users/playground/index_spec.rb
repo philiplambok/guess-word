@@ -12,6 +12,7 @@ RSpec.describe "User's playground", type: :system, js: true do
 
   context 'when user exist' do
     before do
+      create(:word, text: 'sample')
       user = create(:user, name: 'Philip Lambok')
       visit user_playground_index_path(user)
     end
@@ -31,6 +32,12 @@ RSpec.describe "User's playground", type: :system, js: true do
     it 'returns random words' do
       random_word = page.find('#random-word')
       expect(random_word.text).to be_present
+    end
+
+    it 'returns sucess message' do
+      fill_in :guess_word, with: 'sample'
+      click_on 'Submit'
+      expect(page).to have_content 'BENAR point anda menjadi 1'
     end
   end
 end

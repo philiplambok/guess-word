@@ -3,6 +3,9 @@
     {{ name }}
     {{ point }} points
     <div id="random-word">{{ randomWord }}</div>
+    <div if="success">{{ message }}</div>
+    <input type="text" id="guess_word" v-model="guessWord">
+    <button @click.prevent="submit()">Submit</button>
   </div>
 </template>
 
@@ -11,9 +14,25 @@ export default {
   props: ["name", "point"],
   data() {
     return {
+      success: false,
+      message: "",
       randomWordId: null,
-      randomWord: ""
+      randomWord: "",
+      guessWord: ""
     };
+  },
+  methods: {
+    submit() {
+      fetch(`/api/v1/words/${this.randomWordId}`)
+        .then(response => response.json())
+        .then(data => {
+          let correctAnswer = data.text;
+          if (correctAnswer === this.guessWord) {
+            this.success = true;
+            this.message = "BENAR point anda menjadi 1";
+          }
+        });
+    }
   },
   mounted() {
     fetch("/api/v1/random_words")

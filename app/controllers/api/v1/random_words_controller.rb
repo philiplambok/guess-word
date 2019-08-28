@@ -6,6 +6,10 @@ module Api
       def index
         words = Word.all
         word_sample = words.sample
+        if word_sample.blank?
+          render json: { error: 'Words was empty' }
+          return false
+        end
         word_sample_text = word_sample.text
         random_word_service = RandomWord.new(word_sample_text)
         random_word_service.generate
