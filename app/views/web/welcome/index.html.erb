@@ -1,14 +1,20 @@
 <% content_for :title, 'Guess Word Game' %>
 
-<h4>Welcome to guess-word game</h4>
+<div class="my-4">
+  <h4 class="display-4 font-weight-bold">Welcome to</h4>
+  <h4 class="display-4 font-weight-bold">guess-word game</h4>
+</div>
 
 <%= render 'shared/messages' %>
 
 <%= form_with(model: @user, url: users_path, method: :post, local: true) do |form| %>
-  <p>
-    <%= form.text_field :name, placeholder: 'Masukan nama kamu' %>
-  </p>
-  <p>
-    <%= form.submit "Mulai Bermain" %>
-  </p>
+  <div class="my-4">
+    <%= form.text_field :name,
+                        placeholder: 'Masukan nama kamu',
+                        autocomplete: "off",
+                        class: 'form-control' %>
+  </div>
+  <div>
+    <%= form.submit "Mulai Bermain", class: 'btn btn-primary' %>
+  </div>
 <% end %>

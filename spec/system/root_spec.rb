@@ -12,7 +12,8 @@ RSpec.describe 'Welcome page spec', type: :system do
   end
 
   it 'returns welcome text' do
-    expect(page).to have_content 'Welcome to guess-word game'
+    expect(page).to have_text 'Welcome to'
+    expect(page).to have_text 'guess-word game'
   end
 
   it 'redirect to playground page when submit valid name' do

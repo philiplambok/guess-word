@@ -47,6 +47,10 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_content 'SALAH! Silahkan coba lagi'
     end
 
+    it 'returns about link' do
+      expect(page).to have_link 'About'
+    end
+
     it 'increments the point when input word was correct' do
       expect(page).to have_content '0 points'
       fill_in :guess_word, with: 'sample'
