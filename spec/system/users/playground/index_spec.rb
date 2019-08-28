@@ -47,8 +47,9 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_content 'SALAH! Silahkan coba lagi'
     end
 
-    it 'returns about link' do
-      expect(page).to have_link 'About'
+    it 'redirect_to abouts_path if click about link' do
+      click_on 'About'
+      expect(page).to have_current_path abouts_path
     end
 
     it 'make point to zero when click reset button' do

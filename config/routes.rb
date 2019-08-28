@@ -11,6 +11,8 @@ Rails.application.routes.draw do
                                as: :user_playground
       end
     end
+
+    resources :abouts, only: %i[index]
   end
 
   scope :api, module: :api, path: :api do

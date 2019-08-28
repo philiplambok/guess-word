@@ -6,7 +6,7 @@
         <div>{{ point }} points</div>
       </div>
       <div>
-        <a href="#">About</a>
+        <a href="/abouts">About</a>
       </div>
     </div>
 
