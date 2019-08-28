@@ -51,6 +51,14 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_link 'About'
     end
 
+    it 'make point to zero when click reset button' do
+      fill_in :guess_word, with: 'sample'
+      click_on 'Submit'
+      expect(page).to have_content '1 points'
+      click_on 'Reset'
+      expect(page).to have_content '0 points'
+    end
+
     it 'increments the point when input word was correct' do
       expect(page).to have_content '0 points'
       fill_in :guess_word, with: 'sample'

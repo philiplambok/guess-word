@@ -33,7 +33,10 @@
         placeholder="Masukan tebakan katanya"
         class="form-control my-4"
       >
-      <button @click.prevent="submit()" class="btn btn-primary px-4">Submit</button>
+      <div class="d-flex justify-content-between">
+        <button @click.prevent="submit()" class="btn btn-primary px-4">Submit</button>
+        <button class="btn btn-secondary px-4" @click="reset()">Reset</button>
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +56,11 @@ export default {
   },
   methods: {
     closeMessage() {
+      this.message = "";
+    },
+    reset() {
+      this.point = 0;
+      this.guessWord = "";
       this.message = "";
     },
     submit() {
