@@ -12,4 +12,10 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  scope :api, module: :api, path: :api do
+    scope :v1, module: :v1, path: :v1 do
+      resources :random_words, only: %i[index]
+    end
+  end
 end
