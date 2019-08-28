@@ -3,7 +3,8 @@
     {{ name }}
     {{ point }} points
     <div id="random-word">{{ randomWord }}</div>
-    <div if="success">{{ message }}</div>
+    <div v-if="success === true">{{ message }}</div>
+    <div v-if="success === false">{{ message }}</div>
     <input type="text" id="guess_word" v-model="guessWord">
     <button @click.prevent="submit()">Submit</button>
   </div>
@@ -14,7 +15,7 @@ export default {
   props: ["name", "point"],
   data() {
     return {
-      success: false,
+      success: null,
       message: "",
       randomWordId: null,
       randomWord: "",
@@ -29,9 +30,19 @@ export default {
           let correctAnswer = data.text;
           if (correctAnswer === this.guessWord) {
             this.success = true;
-            this.message = "BENAR point anda menjadi 1";
+            this.increaseThePoint();
+            this.message = `BENAR, point anda menjadi ${this.point}`;
+            this.guessWord = "";
+          } else {
+            this.success = false;
+            this.message = `SALAH! Silahkan coba lagi`;
+            this.guessWord = "";
           }
         });
+    },
+    increaseThePoint() {
+      this.point = parseInt(this.point);
+      this.point += 1;
     }
   },
   mounted() {
