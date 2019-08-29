@@ -2,6 +2,8 @@
 
 module Web
   class RankingsController < ApplicationController
-    def index; end
+    def index
+      @users = User.order(point: :desc)
+    end
   end
 end

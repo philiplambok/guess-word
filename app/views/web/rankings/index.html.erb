@@ -1,0 +1,25 @@
+<div class="mb-4 d-flex justify-content-between align-items-center">
+  <h4>Ranking</h4>
+  <div>
+    <%= link_to 'Mulai Bermain', root_path, class: 'text-dark' %>
+  </div>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Point</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each_with_index do |user, rank| rank += 1 %>
+      <tr>
+        <td><%= rank %></td>
+        <td><%= user.name %></td>
+        <td><%= user.point %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
