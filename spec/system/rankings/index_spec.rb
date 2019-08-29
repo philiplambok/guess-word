@@ -3,6 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Ranking index', type: :system do
+  it 'returns expected title' do
+    visit rankings_path
+    expect(page).to have_title 'Ranking'
+  end
+
   it 'returns ordered users' do
     create(:user, name: 'pquest', point: 10)
     create(:user, name: 'ainz', point: 4)
@@ -25,9 +30,9 @@ RSpec.describe 'Ranking index', type: :system do
     end
   end
 
-  it 'redirect to root_path if click Mulai Bermain link' do
+  it 'redirect to root_path if click Mulai bermain link' do
     visit rankings_path
-    click_on 'Mulai Bermain'
+    click_on 'mulai bermain'
     expect(page).to have_current_path root_path
   end
 end

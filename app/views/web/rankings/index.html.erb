@@ -1,18 +1,15 @@
-<div class="mb-4 d-flex justify-content-between">
-  <div>
-    <h4>Ranking</h4>
-  </div>
-  <div>
-    <%= link_to 'Mulai Bermain', root_path %>
-  </div>
-</div>
+<% content_for :title, "Ranking" %>
 
-<table class="table table-bordered table-striped">
-  <thead>
+<h4 class="font-weight-bold mb-4">Ranking</h4>
+
+<p class="my-4">Ayo <%= link_to 'mulai bermain', root_path %> dan dapatkan ranking tertinggi!</p>
+
+<table class="table table-bordered table-hover text-center">
+  <thead class="bg-secondary text-white">
     <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Point</th>
+      <th class="w-20">#</th>
+      <th class="w-40">Name</th>
+      <th class="w-40">Point</th>
     </tr>
   </thead>
   <tbody>
@@ -25,3 +22,4 @@
     <% end %>
   </tbody>
 </table>
+
