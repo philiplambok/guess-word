@@ -6,6 +6,7 @@
         <div>{{ point }} points</div>
       </div>
       <div>
+        <a href="/rankings" class="px-2">Ranking</a>
         <a href="/abouts">About</a>
       </div>
     </div>

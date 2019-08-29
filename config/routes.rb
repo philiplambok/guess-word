@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
 
     resources :abouts, only: %i[index]
+    resources :rankings, only: %i[index]
   end
 
   scope :api, module: :api, path: :api do

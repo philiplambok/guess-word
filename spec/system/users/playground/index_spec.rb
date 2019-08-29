@@ -53,6 +53,11 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_current_path abouts_path
     end
 
+    it 'redirect_to rankings_path if click ranking link' do
+      click_on 'Ranking'
+      expect(page).to have_current_path rankings_path
+    end
+
     it 'make point to zero when click reset button' do
       fill_in :guess_word, with: 'sample'
       click_on 'Submit'
