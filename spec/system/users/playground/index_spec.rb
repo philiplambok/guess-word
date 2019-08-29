@@ -58,6 +58,14 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_current_path rankings_path
     end
 
+    it 'will generates new random text when the answer was correct' do
+      random_word = page.find('#random-word')
+      fill_in :guess_word, with: 'sample'
+      click_on 'Submit'
+      next_random_word = page.find('#random-word')
+      expect(next_random_word.text).not_to eq random_word.text
+    end
+
     it 'make point to zero when click reset button' do
       fill_in :guess_word, with: 'sample'
       click_on 'Submit'
