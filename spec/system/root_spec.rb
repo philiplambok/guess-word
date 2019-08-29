@@ -16,6 +16,16 @@ RSpec.describe 'Welcome page spec', type: :system, js: true do
     expect(page).to have_text 'guess-word game'
   end
 
+  it 'redirect_to abouts_path when about link was clicked' do
+    click_on 'About'
+    expect(page).to have_current_path abouts_path
+  end
+
+  it 'redirect_to ranking_path when ranking link was clicked' do
+    click_on 'Ranking'
+    expect(page).to have_current_path rankings_path
+  end
+
   it 'redirect to playground page when submit valid name' do
     fill_in :user_name, with: 'Philip Lambok'
     click_on 'Mulai Bermain'

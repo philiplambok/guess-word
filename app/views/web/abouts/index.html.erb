@@ -1,3 +1,19 @@
-<h4>Tentang Program</h4>
+<% content_for :title, 'Tentang Program' %>
 
-<p>Dibuat dengan cinta oleh @philiplambok </p>
+<h4 class="font-weight-bold mb-4">Tentang Program</h4>
+
+<p>
+  Sebuah program atau permainan untuk menebak sebuah arti kata dari <i>random string</i>.
+</p>
+
+<p>
+  Jadi nanti anda akan disajikan <i>random string</i> dan anda harus menebak kata apa yang dimaksudnya. Jika anda berhasil menjawab maka point anda akan bertambah satu, namun jika anda gagal menjawab point anda tidak akan bertambah maupun berkurang.
+</p>
+
+<p>
+  Program ini dibuat oleh Ruby/Rails/Vue.js jika anda tertarik untuk sumber kodenya bisa lihat <%= link_to 'disini', 'https://github.com/philiplambok/guess-word', target: '_blank' %>.
+</p>
+
+<p>Apakah anda tertarik untuk bermain? Silahkan coba mainkan <%= link_to 'disini', root_path %></p>
+
+<p><i>Selamat bermain~</i></p>
