@@ -1,5 +1,6 @@
 <% content_for :title, "#{@user.name}'s playground" %>
 
 <user-playground name="<%= @user.name %>"
+                 userid="<%= @user.id %>"
                  initialpoint="<%= @user.point %>">
 </user-playground>

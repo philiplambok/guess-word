@@ -11,9 +11,10 @@ RSpec.describe "User's playground", type: :system, js: true do
   end
 
   context 'when user exist' do
+    let(:user) { create(:user, name: 'Philip Lambok', point: 0) }
+
     before do
       create(:word, text: 'sample')
-      user = create(:user, name: 'Philip Lambok')
       visit user_playground_index_path(user)
     end
 
@@ -58,6 +59,9 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_content '1 points'
       click_on 'Reset'
       expect(page).to have_content '0 points'
+      # We also ensure user's point in database was updated
+      visit user_playground_index_path(user)
+      expect(page).to have_content '0 points'
     end
 
     it 'increments the point when input word was correct' do
@@ -67,6 +71,9 @@ RSpec.describe "User's playground", type: :system, js: true do
       expect(page).to have_content '1 points'
       fill_in :guess_word, with: 'sample'
       click_on 'Submit'
+      expect(page).to have_content '2 points'
+      # We also enscure user's point in database also updated
+      visit user_playground_index_path(user)
       expect(page).to have_content '2 points'
     end
   end
