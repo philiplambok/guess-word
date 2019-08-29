@@ -3,6 +3,11 @@
 module Web
   class UsersController < ApplicationController
     def create
+      user = User.find_by(name: user_params[:name])
+      if user.present?
+        redirect_to user_playground_index_path(user)
+        return true
+      end
       user = User.new(user_params)
       if user.save
         redirect_to user_playground_index_path(user)
