@@ -12,7 +12,7 @@ module Web
       if create_word.success?
         flash[:success] = 'Kata berhasil ditambahkan, terima kasih telah berkontribusi'
       else
-        flash[:danger] = create_word.errors.join(',')
+        flash[:danger] = create_word.errors.join(', ')
       end
       redirect_to new_word_path
     end
