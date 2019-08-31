@@ -33,12 +33,20 @@ en:
   activerecord:
     models:
       user: User
+      word: Kata
     attributes:
       user:
         name: "Nama"
+      word:
+        text: "Kata"
     errors:
       models:
         user:
           attributes:
             name:
               blank: "tidak boleh kosong"
+        word:
+          attributes:
+            text:
+              blank: "tidak boleh kosong"
+              taken: "sudah pernah ditambahkan"

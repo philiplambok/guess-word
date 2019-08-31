@@ -11,13 +11,13 @@ Rails.application.routes.draw do
                                as: :user_playground
       end
     end
-
     resources :abouts, only: %i[index]
     resources :rankings, only: %i[index]
+    resources :words, only: %i[new create]
   end
 
-  scope :api, module: :api, path: :api do
-    scope :v1, module: :v1, path: :v1 do
+  namespace :api do
+    namespace :v1 do
       resources :random_words, only: %i[index]
       resources :words, only: %i[show]
       resources :users, only: %i[update]

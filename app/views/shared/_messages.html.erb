@@ -1,9 +1,9 @@
 
-<% if flash[:error].present? %>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <%= flash[:error] %>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+    <%= value %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <% end %>
