@@ -5,6 +5,7 @@
 - Ruby 2.5.3
 - Rails 6.0.0
 - PostgreSQL 9.5.15
+- Node.js v8.15.0
 - Vue.js 2.6.10
 
 ### Usage
