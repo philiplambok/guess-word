@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Stack
 
-Things you may want to cover:
+- Ruby 2.5.3
+- Rails 6.0.0
+- PostgreSQL 9.5.15
+- Vue.js 2.6.10
 
-* Ruby version
+### Usage
 
-* System dependencies
+```rb
+$> bundle install
+$> yarn install
+$> rspec
+$> rails db:migrate && rails db:seed
+$> rails s -p 3000
+```
 
-* Configuration
+### Documentation
 
-* Database creation
+#### Controllers Organization
 
-* Database initialization
+![Controllers](/docs/images/controllers.png)
 
-* How to run the test suite
+#### Model Organtization
 
-* Services (job queues, cache servers, search engines, etc.)
+![Models](/docs/images/models.png)
 
-* Deployment instructions
+#### Services Organization
 
-* ...
+![Services](/docs/images/services.png)
+
