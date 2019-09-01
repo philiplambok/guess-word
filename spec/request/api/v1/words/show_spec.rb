@@ -14,7 +14,6 @@ RSpec.describe 'Words index API', type: :request do
   it 'returns error not found' do
     get '/api/v1/words/9999'
     json = JSON.parse(response.body)
-    expect(json['error']['code']).to eq 404
-    expect(json['error']['message']).to eq 'Word not found'
+    expect(json['error']).to eq 'Word not found'
   end
 end

@@ -6,12 +6,7 @@ module Api
       def show
         word = Word.find_by(id: params[:id])
         if word.blank?
-          render json: {
-            error: {
-              code: 404,
-              message: 'Word not found'
-            }
-          }
+          render json: { error: 'Word not found' }
           return false
         end
         render json: {
