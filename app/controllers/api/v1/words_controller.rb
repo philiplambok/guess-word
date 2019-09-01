@@ -5,6 +5,15 @@ module Api
     class WordsController < ApplicationController
       def show
         word = Word.find_by(id: params[:id])
+        if word.blank?
+          render json: {
+            error: {
+              code: 404,
+              message: 'Word not found'
+            }
+          }
+          return false
+        end
         render json: {
           id: word.id,
           text: word.text
