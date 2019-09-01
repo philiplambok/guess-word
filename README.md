@@ -1,5 +1,5 @@
 # Guess Word
-![Travis build](https://travis-ci.org/philiplambok/guess-word.svg?branch=master)
+[![Travis build](https://travis-ci.org/philiplambok/guess-word.svg?branch=master)](https://travis-ci.org/philiplambok/guess-word)
 
 
 ### Stack
