@@ -1,4 +1,6 @@
-# README
+# Guess Word
+![Travis build](https://travis-ci.org/philiplambok/guess-word.svg?branch=master)
+
 
 ### Stack
 
@@ -24,7 +26,7 @@ $> rails s -p 3000
 
 ![Controllers](/docs/images/controllers.png)
 
-#### Model Organtization
+#### Models Organization
 
 ![Models](/docs/images/models.png)
 
